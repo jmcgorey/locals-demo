@@ -15,6 +15,13 @@ This is a demo for James's locals project.
     -   Let the user go through a dialog tree with A or B answers to questions
         -   Ultimately the goal is to save the image/Local, but actual saving operating can probably wait
 
+## Constraints
+
+- Ideally this is hostable on something like neocities.  Probably not much support for Javascript frameworks
+- Try to keep this as relatively simple HTML/CSS/JS
+- Should be as portable as possible to other Local scenarios
+
+
 ## Credits
 
 -   Images provided by James Kuckkan @https://toppapublishing.neocities.org/
