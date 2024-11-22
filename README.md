@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a demo for James's locals problem.
+This is a demo for James's locals project.
 
 ## Goal
 
