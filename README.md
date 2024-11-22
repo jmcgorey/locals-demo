@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a demo for James's locals project.
+This is a demo for James's locals project.  Demo is viewable at: https://jmcgorey.github.io/locals-demo/site/
 
 ## Goal
 
