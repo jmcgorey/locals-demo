@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- Original site by James Kuckkan of Toppa Publishing.  Copied from https://toppapublishing.neocities.org/baconeggandcheese on 2024-12-19 -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bacon Egg and Cheese</title>
+
+		<style>
+			body {
+				margin: 0;
+				height: 100vh;
+				background-image: url("/assets/golddelibackground.png");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			.typewriter-container {
+				width: 80%;
+				max-width: 500px;
+				background-color: rgba(0, 0, 0, 0.7);
+				color: #fff;
+				font-size: 1.2rem;
+				font-family: "Bangers", Bangers, monospace;
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+				text-align: center;
+				margin-bottom: 20px;
+				display: none;
+			}
+
+			.typewriter-text {
+				display: inline-block;
+				overflow: hidden;
+				white-space: nowrap;
+				border-right: 2px solid #fff;
+				animation: blink-caret 0.75s step-end infinite;
+			}
+
+			@keyframes blink-caret {
+				50% {
+					border-color: transparent;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- Typewriter Effect Container -->
+		<div class="typewriter-container">
+			<span id="typewriterText" class="typewriter-text"></span>
+		</div>
+
+		<!-- Responsive Image Setup -->
+		<picture>
+			<img
+				src="/assets/baconeggandcheese.gif"
+				alt="Bacon Egg and Cheese"
+			/>
+		</picture>
+
+		<script>
+			const messages = [
+				"It's a Bacon Egg and Cheese.",
+				"It looks grumpy.",
+				"But it smells delicious.",
+				"....",
+				"Huh.",
+				"Normally they run away by now.",
+				"It likes you!",
+				"If you want,",
+				"you can bring it with you.",
+				"Or you can leave it be,",
+				"and come back again.",
+				"Tap and hold,",
+				"Or right-click",
+				"to bring it with you."
+			];
+
+			let charIndex = 0;
+			let messageIndex = 0;
+			const typewriterText = document.getElementById("typewriterText");
+			let isTyping = false; // Prevents taps while typing
+
+			// Typing speed function to randomize between 20ms and 70ms
+			const typingSpeed = () => Math.floor(Math.random() * 50) + 20;
+
+			// Typewriter Effect (types one character at a time)
+			function typeWriterEffect() {
+				if (charIndex < messages[messageIndex].length) {
+					typewriterText.textContent +=
+						messages[messageIndex].charAt(charIndex);
+					charIndex++;
+					setTimeout(typeWriterEffect, typingSpeed());
+				} else {
+					// Typing complete, allow the next tap
+					isTyping = false;
+				}
+			}
+
+			// Start typing the first message on the first tap
+			function startFirstMessage() {
+				document.querySelector(".typewriter-container").style.display =
+					"block";
+				isTyping = true;
+				typeWriterEffect();
+			}
+
+			// Move to the next message and type it out
+			function nextMessage() {
+				if (isTyping) return; // If typing, ignore taps
+				typewriterText.textContent = ""; // Clear current message
+				charIndex = 0;
+
+				// Increment message index, loop back if we're at the end
+				messageIndex++;
+				if (messageIndex >= messages.length) {
+					messageIndex = 0; // Loop to the start
+				}
+
+				isTyping = true; // Lock input while typing
+				typeWriterEffect(); // Start typing
+			}
+
+			// First tap reveals container and types the first message
+			window.addEventListener(
+				"click",
+				() => {
+					startFirstMessage();
+					window.removeEventListener("click", startFirstMessage); // Remove this first-click listener
+				},
+				{ once: true }
+			);
+
+			// Each subsequent tap moves to the next message
+			window.addEventListener("click", nextMessage);
+		</script>
+	</body>
+</html>
