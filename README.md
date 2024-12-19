@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a demo for James's locals project.  Demo is viewable at: https://jmcgorey.github.io/locals-demo/site/
+This is a demo for James's locals project. Demo is viewable at: https://jmcgorey.github.io/locals-demo/site/
 
 ## Goal
 
@@ -17,11 +17,11 @@ This is a demo for James's locals project.  Demo is viewable at: https://jmcgore
 
 ## Constraints
 
-- Ideally this is hostable on something like neocities.  Probably not much support for Javascript frameworks
-- Try to keep this as relatively simple HTML/CSS/JS
-- Should be as portable as possible to other Local scenarios
-
+-   Ideally this is hostable on something like neocities. Probably not much support for Javascript frameworks
+-   Try to keep this as relatively simple HTML/CSS/JS
+-   Should be as portable as possible to other Local scenarios
 
 ## Credits
 
 -   Images provided by James Kuckkan @https://toppapublishing.neocities.org/
+-   Original site: https://toppapublishing.neocities.org/baconeggandcheese
